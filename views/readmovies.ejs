@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home
+    </title>
+    <link rel="icon" href="#">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+</head>
+<style>
+    @media only screen and (max-width:900px) {
+        .iframe {
+            width: 420px;
+            height: 250px;
+        }
+    }
+</style>
+
+<body>
+        <%-include('./components/navbar.ejs')%>
+    <section class="readmovies container text-center ">
+        <h1 class="mt-4 mb-5 text-decoration-underline"><%=data.title%></h1>
+        <div>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/<%=data.url.substring(17,29)%>?rel=0"
+                title="<%=data.title%>" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen class="iframe shadow bg-white rounded"></iframe>
+        </div>
+        <a href="/" class="btn btn-outline-dark mt-3 fs-7">Back to Home</a>
+
+    </section>
+
+</body>
+
+</html>
